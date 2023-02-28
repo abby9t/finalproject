@@ -252,3 +252,9 @@ elif computerwin() == True:
     print("I win!!")
 else:
     print("its a draw!")
+
+#comment: I love this game! For the row selection, you did accept both lower case and upper case letter.
+#that is great! One thing maybe when I try to enter another letter, it still can direct me to choose the
+#column. I wonder if you can make it "not an option" when enter a letter other than A B or C, and ask
+#for another entry for letter. Another thing is, when I try to run this program twice, sometimes the 
+#computer cannot generate its' choice. May be you can take a look at this. Overall is very good! 
