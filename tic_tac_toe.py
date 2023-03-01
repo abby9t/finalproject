@@ -253,3 +253,7 @@ elif computerwin() == True:
     print("I win!!")
 else:
     print("its a draw!")
+
+# The first turn works as intended, but after that it is inconsistent
+# I was looking for where it went wrong but there is so much code it is difficult to identify
+# I could not win the game the time that it was actually showing up so something is up with that code as well
