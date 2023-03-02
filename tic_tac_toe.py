@@ -8,6 +8,7 @@ A = ["( )","( )","( )"]
 B = ["( )","( )","( )"]
 C = ["( )","( )","( )"]
 
+#If you want to skip the turn of the player, maybe consider putting a while loop? Use 'break' to go to the cpu move?
 def playermove(r,cl):
     if r == "A":
         if A[int(cl)-1] == "( )":
@@ -27,6 +28,7 @@ def playermove(r,cl):
     else:
         print("That isnt an option for this game")
 
+# I don't totally understand what this function is doing, why are you using an elif for the B and C row if you're going to check them anyway?
 def block():
     if A == ['(X)', '(X)', '( )'] or A == ['(X)', '( )', '(X)'] or A == ['( )', '(X)', '(X)']:
         if A == ['(X)', '(X)', '( )']:
@@ -49,6 +51,7 @@ def block():
             C[1] = "(O)"
         elif C == ['( )', '(X)', '(X)']:
             C[0] = "(O)"
+#could this be put into a different function?
     elif A[0] == "(X)" and B[0] == "(X)" and C[0] == "( )":
         C[0] = "(O)"
     elif A[0] == "(X)" and B[0] == "( )" and C[0] == "(X)":
@@ -119,11 +122,13 @@ def trytowin():
         elif A[0] == "( )" and B[1] == "(O)" and C[2] == "(O)":
             A[0] = "(O)"
 
+#Could you print these out without the brackets and commas?
 def board():
     print(str(A))
     print(str(B))
     print(str(C))
 
+#Are you including diagonal wins? For both player and CPU?
 def playerwin():
     if A == ['(X)', '(X)', '(X)'] or B == ['(X)', '(X)', '(X)'] or C == ['(X)', '(X)', '(X)']:
         return(True)
