@@ -1,6 +1,3 @@
-#things i still wannna do/fix
-    #if the player selects a spot thats already taken their turn gets skipped (in playermove row 16,21,26) any suggestions on how to fix it?
-
 import random
 whatcorner = random.randint(1,5)
 
@@ -12,16 +9,19 @@ def playermove(r,cl):
     if r == "A":
         if A[int(cl)-1] == "( )":
             A[int(cl)-1] = "(X)"
+            return "exit"
         else:
             print("that spot is already taken")
     elif r == "B":
         if B[int(cl)-1] == "( )":
             B[int(cl)-1] = "(X)"
+            return "exit"
         else:
             print("that spot is already taken")
     elif r == "C":
         if C[int(cl)-1] == "( )":
             C[int(cl)-1] = "(X)"
+            return "exit"
         else:
             print("that spot is already taken")
     else:
@@ -120,9 +120,10 @@ def trytowin():
             A[0] = "(O)"
 
 def board():
-    print(str(A))
-    print(str(B))
-    print(str(C))
+    print("    1      2      3")
+    print("A" + str(A))
+    print("B" + str(B))
+    print("C" + str(C))
 
 def playerwin():
     if A == ['(X)', '(X)', '(X)'] or B == ['(X)', '(X)', '(X)'] or C == ['(X)', '(X)', '(X)']:
@@ -155,12 +156,14 @@ def computerwin():
         return(True)
 
 #player goes first
-board()
-print("Let's play tic tac toe! You go first, type either A B or C to select what row you want your tic mark in")
-row = input().upper()
-print("Ok! What column do you want your tic mark in, type 1 2 or 3")
-column = input()
-playermove(row, column)
+flag = ""
+while flag != "exit":
+    board()
+    print("Let's play tic tac toe! You go first, type the row and column you want your tic mark in\nfor example A2, B3, C1, ect")
+    location = list(input().upper())
+    row = location[0]
+    column = location[1]
+    flag = playermove(row, column)
 board()
 
 #computer's turn
@@ -179,11 +182,14 @@ else:
 board()
 
 #player's turn
-print("where do you wanna go next? type either A B or C to select what row you want your tic mark in")
-row2 = input().upper()
-print("Ok! What column do you want your tic mark in, type 1 2 or 3")
-column2 = input()
-playermove(row2, column2)
+flag2 = ""
+while flag2 != "exit":
+    board()
+    print("where do you wanna go next? Type the row and column you want your tic mark in\nfor example A2, B3, C1, ect")
+    location2 = list(input().upper())
+    row2 = location2[0]
+    column2 = location2[1]
+    flag2 = playermove(row2, column2)
 board()
 
 #computer turn
@@ -192,11 +198,14 @@ block()
 board()
 
 #player turn
-print("where do you wanna go next? type either A B or C to select what row you want your tic mark in")
-row3 = input().upper()
-print("Ok! What column do you want your tic mark in, type 1 2 or 3")
-column3 = input()
-playermove(row3, column3)
+flag3 = ""
+while flag3 != "exit":
+    board()
+    print("where do you wanna go next? Type the row and column you want your tic mark in\nfor example A2, B3, C1, ect")
+    location3 = list(input().upper())
+    row3 = location3[0]
+    column3 = location3[1]
+    flag3 = playermove(row3, column3)
 board()
 
 #check for a win then computer turn
@@ -215,11 +224,14 @@ if playerwin() == True:
 elif computerwin() == True:
     print("I win!!")
 else:
-    print("where do you wanna go next? type either A B or C to select what row you want your tic mark in")
-    row4 = input().upper()
-    print("Ok! What column do you want your tic mark in, type 1 2 or 3")
-    column4 = input()
-    playermove(row4, column4)
+    flag4 = ""
+    while flag4 != "exit":
+        board()
+        print("where do you wanna go next? Type the row and column you want your tic mark in\nfor example A2, B3, C1, ect")
+        location4 = list(input().upper())
+        row4 = location4[0]
+        column4 = location4[1]
+        flag4 = playermove(row4, column4)
     board()
 
 #check for a win then computer turn
@@ -238,11 +250,14 @@ if playerwin() == True:
 elif computerwin() == True:
     print("I win!!")
 else:
-    print("where do you wanna go next? type either A B or C to select what row you want your tic mark in")
-    row4 = input().upper()
-    print("Ok! What column do you want your tic mark in, type 1 2 or 3")
-    column4 = input()
-    playermove(row4, column4)
+    flag5 = ""
+    while flag5 != "exit":
+        board()
+        print("where do you wanna go next? Type the row and column you want your tic mark in\nfor example A2, B3, C1, ect")
+        location5 = list(input().upper())
+        row5 = location5[0]
+        column5 = location5[1]
+        flag5 = playermove(row5, column5)
     board()
 
 #state if its a win or a draw
