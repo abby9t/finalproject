@@ -11,7 +11,7 @@ def playermove(r,cl):
             A[int(cl)-1] = "(X)"
             return "exit"
         else:
-            print("that spot is already taken")
+            print("that spot is already taken") #I could not get it to output that the spot is taken.
     elif r == "B":
         if B[int(cl)-1] == "( )":
             B[int(cl)-1] = "(X)"
@@ -74,6 +74,7 @@ def block():
     else:
         trytowin()
 
+# I am curious if it would be easier to just make the computer play randomly because as it is right now, the computer only plays once and then their marks don't show up anymore
 def trytowin():
         if A == ['(O)', '(O)', '( )'] or A == ['(O)', '( )', '(O)'] or A == ['( )', '(O)', '(O)']:
             if A == ['(O)', '(O)', '( )']:
@@ -267,3 +268,7 @@ elif computerwin() == True:
     print("I win!!")
 else:
     print("its a draw!")
+
+# The first turn works as intended, but after that it is inconsistent
+# I was looking for where it went wrong but there is so much code it is difficult to identify
+# I could not win the game the time that it was actually showing up so something is up with that code as well
